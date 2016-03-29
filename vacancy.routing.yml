@@ -1,0 +1,13 @@
+vacancies.vacancy:
+  path: 'vacatures/{vacancy_id}/{vacancy_name}'
+  defaults:
+    _controller: '\Drupal\vacancy\Controller\VacancyController::content'
+    _title_callback: '\Drupal\vacancy\Controller\VacancyController::addPageTitle'
+  requirements: 
+    _permission: 'access content'
+vacancies_import:
+  path: 'vacancies/import'
+  defaults:
+    _controller: '\Drupal\vacancy\Controller\VacancyImportController::content'
+  requirements: 
+    _permission: 'access content'

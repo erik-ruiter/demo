@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Contains Drupal\vacancy\vacancy.module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function vacancy_theme($existing, $type, $theme, $path) {
+  return array(
+    'vacancy_page' => array(
+      'variables' => array('title' => NULL, 'description' => NULL, 'link' => NULL),
+    ),
+  );
+}

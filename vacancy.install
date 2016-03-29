@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * @file
+ * Contains Drupal\vacancy\vacancy.install.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function vacancy_schema() {
+  $schema['vacancy'] = array(
+    'description' => 'Stores Vacancy items.',
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique vacancy ID.',
+      ),
+      'title' => array(
+        'description' => 'The title of the vacancy.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'description' => array(
+        'description' => 'The function description of the vacancy.',
+        'type' => 'text',
+        'not null' => FALSE,
+      ),
+      'link' => array(
+        'description' => 'The link to the original vacancy.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'guid' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'description' => 'Unique supplier ID',
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+  
+  return $schema;
+}

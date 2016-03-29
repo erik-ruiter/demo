@@ -1,0 +1,3 @@
+services:
+  vacancy.vacancy_service:
+    class: Drupal\vacancy\VacancyService
